@@ -1,0 +1,57 @@
+pip install tensorflow==2.5.0
+pip install keras==2.0.8
+pip install h5py==2.10.0
+pip install psutil==5.7.0 requests
+
+pip uninstall keras -y
+pip uninstall tensorflow -y
+
+pip install keras
+pip install tensorflow
+
+pip install keras
+pip install tensorflow==2.5
+pip install scikit-image==0.16.2
+pip install scikit-image==0.13.0
+
+
+
+Windows10, RTX3080 10GB
+**-------------------------------------------**
+V	TF2.5
+V	CUDA_11.2	cuDNN_8.1.1
+-----------------------------------------------
+
+#x	TF2.2
+#x	7.6cuDNN	10.1CUDA
+
+
+cd C:\programing-pjh\python\microfluidics
+
+conda activate tf2.5
+
+python microfluidics.py train --dataset=C:/programing-pjh/python/microfluidics --weights=coco
+python microfluidics.py train --dataset=C:/programing-pjh/python/microfluidics --weights=last
+
+
+# 사진에 예측 적용하고 저장
+python microfluidics.py splash --weights=last --image=
+python microfluidics.py mask --weights=last --image=
+
+
+# 동영상에 예측 적용하고 저장
+python microfluidics.py splash --weights=last --video=
+python microfluidics.py mask --weights=last --video=
+python microfluidics.py mask --weights=logs/mask_rcnn_object_0608.h5 --video=D:\Microfluidics\Videos\22.08.25
+python microfluidics.py mask --weights=logs/mask_rcnn_object_0608.h5 --video=D:\Microfluidics\Videos\test
+‪python microfluidics.py mask --weights=logs/mask_rcnn_object_0608.h5 --video=D:\Microfluidics\Videos\23.04.05-2
+
+  # 이거 사용
+python microfluidics.py mask --weights=logs/mask_rcnn_object_####.h5 --video=
+
+
+#tensorboard --logdir=(Edit to Path)
+tensorboard --logdir=logs
+
+# jupyter 가상환경 적용
+python -m ipykernel install --user --name 가상머신이름 --display-name "표시할이름"
